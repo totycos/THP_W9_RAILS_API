@@ -33,4 +33,4 @@
 /config/master.key
 
 
-app/config/credentials.yml.enc
+/app/config/credentials.yml.enc
