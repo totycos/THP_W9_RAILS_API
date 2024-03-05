@@ -1,27 +1,38 @@
-# README
+# RAILS BOILERPLATE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Included gems
 
-Things you may want to cover:
+    gem 'rack-cors'
+    gem 'devise', '~> 4.9', '>= 4.9.3'
+    gem 'devise-jwt', '~> 0.11.0'
 
-- Ruby version
+    ### Dev & tests :
+    gem 'rspec-rails', '~> 6.0', '>= 6.0.3', require: false
+    gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
+    gem 'shoulda-matchers', '~> 5.3'
+    gem 'factory_bot_rails', '~> 6.2', require: false
+    gem 'rubocop-rails', '~> 2.22', '>= 2.22.2', require: false
+    gem 'rubocop-rspec', '~> 2.24', '>= 2.24.1', require: false
+    gem 'rubocop-performance', '~> 1.20', require: false
+    gem 'brakeman', '~> 6.1'
+    gem 'rails_best_practices', '~> 1.23', '>= 1.23.2'
 
-- System dependencies
+    ### Dev :
+    gem 'bundle-audit', '~> 0.1.0'
+    gem 'database_consistency', '~> 1.7', '>= 1.7.22', require: false
+    gem 'rubycritic', require: false
 
-- Configuration
+## Configuration :
 
-- Database creation
+### Install gems
 
-- Database initialization
+`bundle install`
 
-- How to run the test suite
+### Create database
 
-- Services (job queues, cache servers, search engines, etc.)
+` rails db:create`
 
-- Deployment instructions
-
-# Think to create credentials for device :
+### Create credentials for device :
 
 `rails secret`
 
@@ -36,9 +47,9 @@ devise:
   jwt_secret_key: [clé copiée] // ⚠ Il faut mettre 2 espaces au début de cette ligne
 ```
 
-# Endpoints :
+## Endpoints :
 
-### Register
+#### Register
 
 `POST /users`
 
@@ -65,7 +76,7 @@ Réponse :
 => {"message":"Signed up successfully.","user":{"id":[id],"email":"test@example.com","created_at":[timestamp],"updated_at":[timestamp]}
 ```
 
-### Login
+#### Login
 
 `POST /users/sign_in`
 
@@ -110,7 +121,7 @@ Transfer-Encoding: chunked
 {"message":"You are logged in.","user":{"id":204,"email":"test@example.com","created_at":"2022-03-01T19:50:54.482Z","updated_at":"2022-03-01T19:50:54.482Z"}}
 ```
 
-### Logout
+#### Logout
 
 `DELETE /users/sign_out`
 
