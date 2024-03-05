@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @article %>
+
+<div>
+<% if user_signed_in? && current_user == @article.user %>
+  <%= link_to "Edit this article", edit_article_path(@article) %> |
+  <%= link_to "Destroy this article", @article, method: :delete %>
+<% end %>
+  <%= link_to "Back to articles", articles_path, class: "btn btn-primary" %>
+</div>
