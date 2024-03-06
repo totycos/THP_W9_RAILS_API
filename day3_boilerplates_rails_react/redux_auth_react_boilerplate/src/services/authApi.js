@@ -52,3 +52,30 @@ export const loginFetch = async (email, password) => {
         return error
     }
 }
+
+// FORGOT PASSWORD FETCH 
+export const forgotPasswordFetch = async (email) => {
+    try {
+        const data = {
+            user: {
+                email: email
+            }
+        };
+
+        const response = await fetch('http://localhost:3000/api/v1/users/password', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error('Forgot password failed. Please check your credentials and try again.');
+        }
+
+        return response
+    } catch (error) {
+        return error
+    }
+}

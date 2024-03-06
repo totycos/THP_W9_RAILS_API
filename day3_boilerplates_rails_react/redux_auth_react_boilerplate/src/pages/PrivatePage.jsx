@@ -1,7 +1,7 @@
 import React from "react";
 
 const PrivatePage = () => {
-  return <div>PrivatePage</div>;
+  return <h1>PrivatePage</h1>;
 };
 
 export default PrivatePage;

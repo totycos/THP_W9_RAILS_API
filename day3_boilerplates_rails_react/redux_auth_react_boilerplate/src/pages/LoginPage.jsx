@@ -9,6 +9,9 @@ const LoginPage = () => {
       <p>
         You don't have an account ? <Link to={"/register"}>Register</Link>
       </p>
+      <p>
+        Forgot your password ? <Link to={"/forgot-password"}>Reset it</Link>
+      </p>
     </div>
   );
 };

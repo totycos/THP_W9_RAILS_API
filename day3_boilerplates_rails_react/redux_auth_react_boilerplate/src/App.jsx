@@ -7,6 +7,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Navbar from "./components/Navbar";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import "./App.css";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route element={<PrivateRoutes />}>
             <Route path="/private" element={<PrivatePage />} />
           </Route>
