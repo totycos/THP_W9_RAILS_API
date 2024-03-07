@@ -79,3 +79,35 @@ export const forgotPasswordFetch = async (email) => {
         return error
     }
 }
+
+// RESET PASSWORD FETCH 
+export const resetPasswordFetch = async (token, password, password_confirmation) => {
+    try {
+        const data = {
+            user: {
+                reset_password_token: token,
+                password: password,
+                password_confirmation: password_confirmation
+            }
+        };
+        console.log('data:', JSON.stringify(data))
+        const response = await fetch('http://localhost:3000/api/v1/users/password', {
+            //mode: 'no-cors',
+            method: 'PATCH', // MAJUSCULE !!!
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error('Reset password failed. Please check your credentials and try again.');
+        }
+
+        return response
+    } catch (error) {
+
+        return error
+    }
+}
+
