@@ -19,7 +19,16 @@ const LoginForm = () => {
       const response = await loginFetch(data.email, data.password);
 
       if (response.headers) {
-        Cookies.set("auth_token", response.headers.get("Authorization")); // SET AUTH TOKEN
+        const responseBody = await response.json();
+        Cookies.set(
+          "auth_token",
+          JSON.stringify({
+            token: response.headers.get("Authorization"),
+            user_id: responseBody.user.id,
+            email: responseBody.user.email,
+          })
+        );
+        // console.log(JSON.parse(Cookies.get("auth_token")));
         dispatch(login());
         navigate(`/`);
       }

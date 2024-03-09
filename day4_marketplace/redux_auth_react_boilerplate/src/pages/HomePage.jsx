@@ -1,7 +1,7 @@
-import React from "react";
+import IndexProperties from "../components/IndexProperties";
 
 const HomePage = () => {
-  return <h1>HomePage</h1>;
+  return <IndexProperties />;
 };
 
 export default HomePage;

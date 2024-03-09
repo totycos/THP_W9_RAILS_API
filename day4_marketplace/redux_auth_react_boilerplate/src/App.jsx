@@ -9,6 +9,9 @@ import PrivateRoutes from "./utils/PrivateRoutes";
 import "./App.css";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
+import ShowPropertyPage from "./pages/properties/ShowPropertyPage";
+import NewPropertyPage from "./pages/properties/NewPropertyPage";
+import EditPropertyPage from "./pages/properties/EditPropertyPage";
 
 function App() {
   return (
@@ -17,6 +20,10 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/properties/:id" element={<ShowPropertyPage />} />
+          <Route path="/properties/new" element={<NewPropertyPage />} />
+          <Route path="/properties/edit/:id" element={<EditPropertyPage />} />
+
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />

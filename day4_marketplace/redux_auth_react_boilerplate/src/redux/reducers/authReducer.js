@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 
 
 const initialState = {
-  isLogged: !!Cookies.get('auth_token'),
+  isLogged: !!Cookies.get('auth_token')
 }
 
 export const authReducer = createSlice({
